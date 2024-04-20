@@ -80,7 +80,7 @@ private:
 	double right_side;
 	double left_side;
 
-	vector<double> fields{ top_base, bottom_base, height, right_side, left_side };
+	vector<double> fields{ top_base, bottom_base, height, right_side, left_side, area(), perimeter()};
 
 public:
 

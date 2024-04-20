@@ -130,14 +130,18 @@
     <ClCompile Include="..\..\Lab1New\Lab1New\Input.cpp" />
     <ClCompile Include="Files.cpp" />
     <ClCompile Include="Lab2_rewrite_AGAIN.cpp" />
+    <ClCompile Include="Show_menu.cpp" />
     <ClCompile Include="Tasks.cpp" />
+    <ClCompile Include="Tests.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Lab1New\Lab1New\Input.h" />
     <ClInclude Include="Figure.h" />
     <ClInclude Include="Figure_controller.h" />
     <ClInclude Include="Files.h" />
+    <ClInclude Include="Show_menu.h" />
     <ClInclude Include="Tasks.h" />
+    <ClInclude Include="Test_class.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -3,6 +3,7 @@
 #include "Files.h"
 #include "Input.h"
 #include "Tasks.h"
+#include "Show_menu.h"
 
 #include <iostream>
 
@@ -22,7 +23,7 @@ int main()
 	system("chcp 65001");
 	system("cls");
 
-	//Show_greeting();
+	show_greeting();
 
 	int menu_item;
 
@@ -32,7 +33,7 @@ int main()
 
 	do {
 
-		//Show_menu();
+		show_menu();
 
 		menu_item = InputInt("Select menu item : ", 0, 9);
 
@@ -47,7 +48,7 @@ int main()
 
 		case(LOAD_FIGURES): { load_data(figures); break; }
 
-						  //case(RUN_TESTS): { run_tests(); break; }
+		case(RUN_TESTS): { run_tests(); break; }
 
 		case(EXIT): { repeat = false; }
 
