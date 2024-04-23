@@ -37,7 +37,7 @@ public:
 
 	double perimeter() override { return 2 * M_PI * radius; }
 
-	void show_figure() override { cout << "Circle with radius: " << radius << endl; }
+	void show_figure() override { cout << "Circle with radius: " << radius << ", area: " << area() << ", perimeter: " << perimeter() << endl; }
 
 	char get_name() override { return 'C'; }
 
@@ -62,7 +62,7 @@ public:
 	double perimeter() override { return 2 * (width + length); }
 
 	void show_figure() override {
-		cout << "Rectangle with width: " << width << " and length: " << length << endl;
+		cout << "Rectangle with width: " << width << ", length: " << length << ", area: " << area() << ", perimeter: " << perimeter() << endl;
 	}
 
 	char get_name() override { return 'R'; }
@@ -93,7 +93,8 @@ public:
 
 	void show_figure() override {
 		cout << "Trapezoid with top base: " << top_base << ", bottom base: " << bottom_base
-			<< ", height: " << height << ", right side: " << right_side << ", left side: " << left_side << endl;
+			<< ", height: " << height << ", right side: " << right_side << ", left side: " << left_side
+			<< ", area: " << area() << ", perimeter: " << perimeter() << endl;
 	}
 
 	char get_name() override { return 'T'; }

@@ -193,14 +193,12 @@ vector<unique_ptr<Figure>> get_figures_from_file(string filename) {
 
 	input_file.close();
 
-	cout << "Data successfully imported" << endl;
-
 	return figures;
 }
 
 bool is_filepath_valid(string filepath) {
 
-	regex file_path_regex("^(?:[a-zA-Z]\\:|\\\\)\\\\([^\\\\]+\\\\)*[^\\/:*?\"<>|]+\\.csv$");
+	regex file_path_regex("^(?:[a-zA-Z]\\:|\\\\)\\\\([^\\\\]+\\\\)*[^\\/:*?\"<>|]+\\.txt$");
 
 	regex filename_reserved_names("^(?:CON|PRN|AUX|NUL|COM[1-9]|LPT[1-9]|con|prn|aux|nul|com[1-9]|lpt[1-9])(?:\\..*)?$");
 
@@ -219,7 +217,7 @@ string get_valid_filepath() {
 
 	while (!is_path_valid) {
 
-		filepath = InputString("Enter full path to file (only csv acceptable): ");
+		filepath = InputString("Enter full path to file (only txt acceptable): ");
 
 		if (is_filepath_valid(filepath)) { is_path_valid = true; }
 	}
@@ -227,15 +225,13 @@ string get_valid_filepath() {
 	return filepath;
 }
 
-string get_overwrite_confirmation(string filepath) {
-	while (file_exists(filepath)) {
-		if (confirm_overwrite(filepath)) {
-			return filepath;
-		}
-		else {
+string get_overwrite_confirmation(string &filepath) {
+	if (file_exists(filepath)) {
+		while (!confirm_overwrite(filepath)) {
 			cout << "Please choose another file." << endl;
-			return get_valid_filepath();
+			filepath =  get_valid_filepath();			
 		}
+
 	}
 	return filepath;
 }

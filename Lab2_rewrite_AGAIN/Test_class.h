@@ -1,9 +1,11 @@
 #pragma once
 #include "Figure.h"
+#include "Figure_controller.h"
 
 
 #include <iostream>
 #include <vector>
+#include <memory>
 
 using namespace std;
 
@@ -11,14 +13,17 @@ using namespace std;
 class Test
 {
 public:
-	vector<shared_ptr<Figure>> figures_to_test;
+	Figure_controller &figures_to_test;
+
+	//vector<unique_ptr<Figure>> figures_to_test;
 
 	vector<double> expectet_circle;
 	vector<double> expectet_rectangle;
 	vector<double> expectet_trapezoid;
 
 
-	Test(vector<shared_ptr<Figure>> figures_to_test,
+	Test(Figure_controller &figures_to_test,
+		//vector<unique_ptr<Figure>> figures_to_test,
 		vector<double> expectet_circle,
 		vector<double> expectet_rectangle,
 		vector<double> expectet_trapezoid) :

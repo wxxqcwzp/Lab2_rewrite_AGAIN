@@ -104,6 +104,8 @@ void load_data(Figure_controller& figures) {
 
 	if (figures_from_file.empty()) { cerr << "Data was not loaded" << endl; return; }
 
+	cout << "Data successfully imported" << endl;
+
 	figures.set_figures(move(figures_from_file));
 
 }
